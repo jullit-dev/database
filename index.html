@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <title>skb.</title>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container flex">
+      <a href="#" class="logo header__logo">
+        <img src="img/logo.svg" alt="Логотип skb">
+      </a>
+      <input id="header__input" placeholder="Введите запрос">
+    </div>
+  </header>
+
+  <main id="main" class="main">
+    <div class="srm container">
+      <div class="srm__clients">
+        <h1>Клиенты</h1>
+
+        <div class="srm__table-wrap">
+          <div id="tbody__spinner" class="spinner">
+            <div class="spinner-border">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 20C2 29.941 10.059 38 20 38C29.941 38 38 29.941 38 20C38 10.059 29.941 2 20 2C17.6755 2 15.454 2.4405 13.414 3.243" stroke="#9873FF" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round"/>
+              </svg>               
+            </div>
+          </div>
+          <table class="srm__table">
+            <thead class="srm__thead">
+              <tr class="srm__thead-tr flex">
+                <td id="srm__thead-id">
+                  ID
+                  <button id="srm__thead-sort--id" class="srm__thead-sort srm__thead-sort--id btn-reset">
+                    <svg id="srm__thead-sort--id-svg" class="srm__thead-dir" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.7" clip-path="url(#clip0_224_1340)">
+                        <path d="M10 6L9.295 5.295L6.5 8.085L6.5 2H5.5L5.5 8.085L2.71 5.29L2 6L6 10L10 6Z" fill="#9873FF"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_224_1340-2">
+                          <rect width="12" height="12" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>                    
+                  </button>
+                </td>
+                <td id="srm__thead-name">Фамилия Имя Отчество
+                  <button id="srm__thead-sort--name" class="srm__thead-sort srm__thead-sort--name btn-reset">
+                    <svg id="srm__thead-sort--name-svg" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.7" clip-path="url(#clip0_224_1340)">
+                        <path d="M10 6L9.295 5.295L6.5 8.085L6.5 2H5.5L5.5 8.085L2.71 5.29L2 6L6 10L10 6Z" fill="#9873FF"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_224_1340-1">
+                          <rect width="12" height="12" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>  
+                    А-Я
+                  </button>
+                </td>
+                <td id="srm__thead-create">Дата и время создания
+                  <button id="srm__thead-sort--create" class="srm__thead-sort  srm__thead-sort--create btn-reset">
+                    <svg id="srm__thead-sort--create-svg" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.7" clip-path="url(#clip0_224_1340)">
+                        <path d="M10 6L9.295 5.295L6.5 8.085L6.5 2H5.5L5.5 8.085L2.71 5.29L2 6L6 10L10 6Z" fill="#9873FF"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_224_1340-3">
+                          <rect width="12" height="12" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                </td>
+                <td id="srm__thead-update">Последние изменения
+                  <button id="srm__thead-sort--update" class="srm__thead-sort  srm__thead-sort--update btn-reset">
+                    <svg id="srm__thead-sort--update-svg" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g opacity="0.7" clip-path="url(#clip0_224_1340)">
+                        <path d="M10 6L9.295 5.295L6.5 8.085L6.5 2H5.5L5.5 8.085L2.71 5.29L2 6L6 10L10 6Z" fill="#9873FF"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_224_1340-4">
+                          <rect width="12" height="12" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                </td>
+                <td id="srm__thead-contacts">Контакты</td>
+                <td id="srm__thead-btn">Действия</td>
+              </tr>
+            </thead>
+            <tbody id="tbody" class="srm__tbody">
+
+            </tbody>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn__add-wrap flex">
+      <button id="btn__add" class="btn__add">Добавить клиента</button>
+    </div>     
+
+    <div id="modal__add" class="modal" style="margin-bottom: 30px;">
+      <div class="modal__box srm__new">
+        <div class="flex modal__header">
+          <h2 class="modal__title">Новый клиент</h2>
+          <button id="modal__add-close" class="modal__btn-close btn-reset">
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2332 7.73333L21.2665 6.76666L14.4998 13.5334L7.73318 6.7667L6.76652 7.73336L13.5332 14.5L6.76654 21.2667L7.73321 22.2333L14.4998 15.4667L21.2665 22.2334L22.2332 21.2667L15.4665 14.5L22.2332 7.73333Z" fill="#B0B0B0"/>
+            </svg>            
+          </button>
+        </div>
+        <form action="#" class="modal__form" id="form">
+          <div class="form__inputs">
+            <div class="form-group">
+              <input type="text" id="form__surname" class="form__input"  placeholder=" " required>                   
+              <label class="form__label" for="form__surname">Фамилия<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="form__name" class="form__input"  placeholder=" " required>              
+              <label class="form__label" for="form__name">Имя<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="form__lastname" class="form__input"  placeholder=" ">              
+              <label class="form__label" for="form__lastname">Отчество</label>
+            </div>
+          </div>
+          <div class="modal__form-contacts">
+            <ul class="form-add__contacts-list list-reset">
+
+            </ul>
+            <button type="submit" class="modal-add__btn-add modal__btn-add btn-reset">
+              <img src="img/add-contact.svg" alt="кнопка добавить">Добавить контакт
+            </button>
+          </div>
+          <div id="errors__create" class="errors"></div>
+            <button type="submit" class="modal__btn-save btn-reset">Сохранить</button>
+            <button type="submit" id="modal__add-cancel" class="modal__btn-cancel btn-reset">Отмена</button>  
+        </form> 
+      </div> 
+    </div>
+
+    <div id="modal__del" class="modal" style="margin-bottom: 30px;">
+      <div class="modal__box srm__del">
+        <div class="flex modal__header">
+          <h2 class="modal__title">Удалить клиента</h2>
+          <button id="modal__del-close" class="modal__btn-close btn-reset">
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2332 7.73333L21.2665 6.76666L14.4998 13.5334L7.73318 6.7667L6.76652 7.73336L13.5332 14.5L6.76654 21.2667L7.73321 22.2333L14.4998 15.4667L21.2665 22.2334L22.2332 21.2667L15.4665 14.5L22.2332 7.73333Z" fill="#B0B0B0"/>
+            </svg>            
+          </button>
+        </div>
+        <p class="srm__del-text">
+          Вы действительно хотите удалить данного клиента?
+        </p>
+        <button type="submit" id="modal__btn-delete" class="modal__btn-delete btn-reset">Удалить</button>
+        <button type="submit" id="modal__del-cancel" class="modal__btn-cancel btn-reset">Отмена</button>
+      </div>
+    </div>
+
+    <div id="modal__change" class="modal" style="margin-bottom: 150px;">
+      <div class="modal__box srm__change">
+        <div class="flex modal__header">
+          <h2 class="modal__title">Изменить данные</h2>
+          <span class="modal__change-id">ID: </span>
+          <span id="modal__change-id"></span>
+          <button id="modal__change-close" class="modal__btn-close btn-reset">
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2332 7.73333L21.2665 6.76666L14.4998 13.5334L7.73318 6.7667L6.76652 7.73336L13.5332 14.5L6.76654 21.2667L7.73321 22.2333L14.4998 15.4667L21.2665 22.2334L22.2332 21.2667L15.4665 14.5L22.2332 7.73333Z" fill="#B0B0B0"/>
+            </svg>            
+          </button>
+        </div>
+        <form action="#" class="modal__form" id="change__form">
+          <div class="form__inputs">
+            <div class="form-group">
+              <label class="form__label form__label-change">Фамилия<span class="asterisk">*</span></label>
+              <input type="text" id="change__surname" class="form__input">
+            </div>
+            <div class="form-group">
+              <label class="form__label form__label-change">Имя<span class="asterisk">*</span></label>
+              <input type="text" id="change__name" class="form__input">
+            </div>
+            <div class="form-group">
+              <label class="form__label form__label-change">Отчество</label>
+              <input type="text" id="change__lastname" class="form__input">
+            </div>
+          </div>
+
+          <div class="modal__form-contacts">
+            <ul class="form-change__contacts-list list-reset">
+
+            </ul>
+            <button type="button" class="modal-change__btn-add modal__btn-add btn-reset">
+              <img src="img/add-contact.svg" alt="кнопка добавить">Добавить контакт
+            </button>
+          </div>
+          <div id="errors__change" class="errors"></div>
+          <button type="submit" id="change__btn-save" class="modal__btn-save modal-change__btn-save btn-reset">Сохранить</button>
+          <button type="button" id="change__btn-delete" class="modal__btn-cancel modal-change__btn-cancel btn-reset">Удалить клиента</button>  
+        </form>
+      </div>
+    </div>  
+  </main>
+  
+</body>
+</html>

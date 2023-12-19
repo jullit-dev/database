@@ -1,0 +1,32 @@
+@media (max-width: 1023px) {
+  #srm__thead-create, .srm__createdat,
+  #srm__thead-update, .srm__updateat {
+    width: 104px;
+  }  
+
+  #srm__thead-btn, .srm__btn-wrap {
+    width: 110px;
+  }   
+}
+
+@media (max-width: 576px) {
+  #header__input {
+    display: none;
+  }
+
+  .header__logo {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .srm__clients {
+    padding-top: 74px;
+  }
+}
